@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1ay7b2mht5nn"]
+
+[ext_resource type="PackedScene" uid="uid://dl403vkp5xvl" path="res://assets/imported/Cooked meat patty.fbx" id="1_w8j1d"]
+[ext_resource type="Texture2D" uid="uid://betpuepscypco" path="res://assets/imported/textures/Meat_AlbedoTransparency.png" id="2_twuqs"]
+[ext_resource type="Texture2D" uid="uid://c3j7a4e4ro7eu" path="res://assets/imported/textures/Meat_MetallicSmoothness.png" id="3_f8vqr"]
+[ext_resource type="Texture2D" uid="uid://bfbfqy2qdt8pa" path="res://assets/imported/textures/Meat_Normal.png" id="4_w1nc8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0iya"]
+albedo_texture = ExtResource("2_twuqs")
+metallic = 1.0
+metallic_texture = ExtResource("3_f8vqr")
+normal_enabled = true
+normal_texture = ExtResource("4_w1nc8")
+
+[node name="Cooked meat patty" instance=ExtResource("1_w8j1d")]
+
+[node name="Cooked meat patty" parent="RootNode" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_i0iya")

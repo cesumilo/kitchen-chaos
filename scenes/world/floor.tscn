@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://byxx5mh7w060c"]
+
+[ext_resource type="Material" uid="uid://btf40q4q0yr23" path="res://assets/shaders/floor_tiles.tres" id="1_l6q1f"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q6rcc"]
+size = Vector2(20, 20)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_ybmje"]
+
+[node name="Floor" type="StaticBody3D"]
+collision_layer = 2
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 3.80871e-11, 5.62239e-11, -9.18417e-11, 1, 1.75647e-12, -7.2805e-11, 1.40779e-12, 1, 0, 0, 0)
+material_override = ExtResource("1_l6q1f")
+mesh = SubResource("PlaneMesh_q6rcc")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_ybmje")

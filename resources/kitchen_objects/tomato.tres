@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://dstqpeb501qhh"]
+
+[ext_resource type="Script" path="res://scripts/scriptable_objects/KitchenObjectResource.cs" id="2_lj5d8"]
+[ext_resource type="Texture2D" uid="uid://1grnhmlfuupp" path="res://assets/textures/Icons/Tomato.png" id="2_msilf"]
+
+[resource]
+script = ExtResource("2_lj5d8")
+ScenePath = "res://scenes/objects/tomato.tscn"
+Sprite = ExtResource("2_msilf")
+Name = "Tomato"

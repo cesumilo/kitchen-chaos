@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5nnv4dm23su0"]
+
+[ext_resource type="PackedScene" uid="uid://b6d7sdudanelo" path="res://assets/imported/Cabbage.fbx" id="1_23j0w"]
+[ext_resource type="Texture2D" uid="uid://kdu26470h6nb" path="res://assets/imported/textures/Lettuce_AlbedoTransparency.png" id="2_yb7il"]
+[ext_resource type="Texture2D" uid="uid://qrfvqiu5805g" path="res://assets/imported/textures/Lettuce_MetallicSmoothness.png" id="3_fyqge"]
+[ext_resource type="Texture2D" uid="uid://cuwmbsuo3irlj" path="res://assets/imported/textures/Lettuce_Normal.png" id="4_4ovhu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mnjyo"]
+albedo_texture = ExtResource("2_yb7il")
+metallic = 1.0
+metallic_texture = ExtResource("3_fyqge")
+normal_enabled = true
+normal_texture = ExtResource("4_4ovhu")
+
+[node name="Cabbage" instance=ExtResource("1_23j0w")]
+
+[node name="Lettuce" parent="RootNode" index="0"]
+transform = Transform3D(1.571, 1.06398, 1.31768, 0, 2.84835, -1.28518, -1.23772, 1.35048, 1.67248, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_mnjyo")

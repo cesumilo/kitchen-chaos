@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://xw05mc5ieg3v"]
+
+[ext_resource type="Script" path="res://scripts/KitchenCounter.cs" id="1_7dote"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l7fy5"]
+size = Vector3(1.37694, 1.23811, 1.29899)
+
+[node name="Kitchen Counter" type="StaticBody3D" node_paths=PackedStringArray("selection")]
+collision_layer = 2
+script = ExtResource("1_7dote")
+selection = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637794, 0.0240149)
+shape = SubResource("BoxShape3D_l7fy5")

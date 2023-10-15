@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://cd2tr84mdywva"]
+
+[ext_resource type="PackedScene" uid="uid://cq0s63cx5h5uv" path="res://assets/imported/Tomato slice.fbx" id="1_qss16"]
+[ext_resource type="Texture2D" uid="uid://43l1sb362d6j" path="res://assets/imported/textures/Tomato_AlbedoTransparency.png" id="2_l3dn4"]
+[ext_resource type="Texture2D" uid="uid://drmbqu545lpvj" path="res://assets/imported/textures/Tomato_MetallicSmoothness.png" id="3_ue7k2"]
+[ext_resource type="Texture2D" uid="uid://hqc3rna6lcn7" path="res://assets/imported/textures/Tomato_Normal.png" id="4_m5pdk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ldrt"]
+albedo_texture = ExtResource("2_l3dn4")
+metallic = 1.0
+metallic_texture = ExtResource("3_ue7k2")
+normal_enabled = true
+normal_texture = ExtResource("4_m5pdk")
+
+[node name="Tomato slice" instance=ExtResource("1_qss16")]
+
+[node name="Tomato slice" parent="RootNode" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_5ldrt")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn75057ua6l7p"]
+
+[ext_resource type="PackedScene" uid="uid://df0xltt4pd0f7" path="res://assets/imported/Bread bottom.fbx" id="1_g3io2"]
+[ext_resource type="Texture2D" uid="uid://gu1c5vx6k4qv" path="res://assets/imported/textures/Bread_AlbedoTransparency.png" id="2_7olbe"]
+[ext_resource type="Texture2D" uid="uid://d13kmii1hsh6q" path="res://assets/imported/textures/Bread_MetallicSmoothness.png" id="3_3ygwm"]
+[ext_resource type="Texture2D" uid="uid://dpcv8d174row8" path="res://assets/imported/textures/Bread_Normal.png" id="3_q6hp8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ay185"]
+albedo_texture = ExtResource("2_7olbe")
+metallic = 1.0
+metallic_texture = ExtResource("3_3ygwm")
+normal_enabled = true
+normal_texture = ExtResource("3_q6hp8")
+
+[node name="Bread bottom" instance=ExtResource("1_g3io2")]
+
+[node name="bread for burget bottom" parent="RootNode" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0.00206083, 0.0167666, -0.00975262)
+material_override = SubResource("StandardMaterial3D_ay185")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://cwtsn3aewrqme"]
+
+[ext_resource type="PackedScene" uid="uid://blc0xhdqtfqcm" path="res://assets/imported/Chopping Board.fbx" id="1_x23v1"]
+[ext_resource type="Texture2D" uid="uid://bhhyonorcvkl0" path="res://assets/imported/textures/Chopping board_AlbedoTransparency.png" id="2_7ysin"]
+[ext_resource type="Texture2D" uid="uid://b4ue5ootwu0g1" path="res://assets/imported/textures/Chopping board_MetallicSmoothness.png" id="3_eb8lp"]
+[ext_resource type="Texture2D" uid="uid://b3n6r0toly4hk" path="res://assets/imported/textures/Chopping board_Normal.png" id="4_b260g"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bd24m"]
+albedo_texture = ExtResource("2_7ysin")
+metallic = 1.0
+metallic_texture = ExtResource("3_eb8lp")
+normal_enabled = true
+normal_texture = ExtResource("4_b260g")
+
+[node name="Chopping Board" instance=ExtResource("1_x23v1")]
+
+[node name="Cube_005" parent="RootNode" index="0"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bd24m")

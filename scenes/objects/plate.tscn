@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://cnvx2jcbnfl57"]
+
+[ext_resource type="PackedScene" uid="uid://b3jxqwu823cbu" path="res://assets/imported/Plate.fbx" id="1_3owtl"]
+[ext_resource type="Texture2D" uid="uid://cnsk1cl82ctv5" path="res://assets/imported/textures/Plate_AlbedoTransparency.png" id="2_ja56n"]
+[ext_resource type="Texture2D" uid="uid://bqsk63yeeeevb" path="res://assets/imported/textures/Plate_MetallicSmoothness.png" id="3_vvo6g"]
+[ext_resource type="Texture2D" uid="uid://dibiar4l88r84" path="res://assets/imported/textures/Plate_Normal.png" id="4_d3xl8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x5aie"]
+albedo_texture = ExtResource("2_ja56n")
+metallic = 1.0
+metallic_texture = ExtResource("3_vvo6g")
+normal_enabled = true
+normal_texture = ExtResource("4_d3xl8")
+
+[node name="Plate" instance=ExtResource("1_3owtl")]
+
+[node name="plate" parent="RootNode" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_x5aie")

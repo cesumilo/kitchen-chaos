@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://bahuimeel6gmp"]
+
+[ext_resource type="PackedScene" uid="uid://bryjechkl373f" path="res://assets/imported/Trash bin.fbx" id="1_ft4c8"]
+[ext_resource type="Texture2D" uid="uid://vjhftnw2wjw6" path="res://assets/imported/textures/Trash bin_AlbedoTransparency.png" id="2_gxcmb"]
+[ext_resource type="Texture2D" uid="uid://du5mjleedewgb" path="res://assets/imported/textures/Trash bin_MetallicSmoothness.png" id="3_btibg"]
+[ext_resource type="Texture2D" uid="uid://126o441ome4c" path="res://assets/imported/textures/Trash bin_Normal.png" id="4_sj3ac"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bam4i"]
+albedo_texture = ExtResource("2_gxcmb")
+metallic = 1.0
+metallic_texture = ExtResource("3_btibg")
+normal_enabled = true
+normal_texture = ExtResource("4_sj3ac")
+
+[node name="Trash bin" instance=ExtResource("1_ft4c8")]
+
+[node name="trash bin" parent="RootNode" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_bam4i")

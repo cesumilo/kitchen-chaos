@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1calmh14406o"]
+
+[ext_resource type="PackedScene" uid="uid://de5xxrve1jf1" path="res://assets/imported/Frying Pan.fbx" id="1_pfgni"]
+[ext_resource type="Texture2D" uid="uid://bug0h417losl0" path="res://assets/imported/textures/Frying pan_AlbedoTransparency.png" id="2_i6eby"]
+[ext_resource type="Texture2D" uid="uid://dxawi7gdrr51e" path="res://assets/imported/textures/Frying pan_MetallicSmoothness.png" id="3_d0vm0"]
+[ext_resource type="Texture2D" uid="uid://degcwn35x4ko8" path="res://assets/imported/textures/Frying pan_Normal.png" id="4_ydc4i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybh32"]
+albedo_texture = ExtResource("2_i6eby")
+metallic = 1.0
+metallic_texture = ExtResource("3_d0vm0")
+normal_enabled = true
+normal_texture = ExtResource("4_ydc4i")
+
+[node name="Frying Pan" instance=ExtResource("1_pfgni")]
+
+[node name="Cylinder_003" parent="RootNode" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ybh32")

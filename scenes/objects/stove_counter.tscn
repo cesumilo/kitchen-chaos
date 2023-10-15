@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://2bli6omr24bf"]
+
+[ext_resource type="PackedScene" uid="uid://chcgd8sn4i8au" path="res://assets/imported/Stove Counter.fbx" id="1_7ktgj"]
+[ext_resource type="Texture2D" uid="uid://dqu5y558iisci" path="res://assets/imported/textures/Stove_AlbedoTransparency.png" id="2_fy3p7"]
+[ext_resource type="Texture2D" uid="uid://bvvsb4mtbs1lu" path="res://assets/imported/textures/Stove_MetallicSmoothness.png" id="3_xn34f"]
+[ext_resource type="Texture2D" uid="uid://bvf5lg4jx351t" path="res://assets/imported/textures/Stove_Normal.png" id="4_05ig0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1f1iy"]
+albedo_texture = ExtResource("2_fy3p7")
+metallic = 1.0
+metallic_texture = ExtResource("3_xn34f")
+normal_enabled = true
+normal_texture = ExtResource("4_05ig0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gfqnn"]
+blend_mode = 1
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 10.28
+backlight = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b311p"]
+
+[node name="Stove Counter" instance=ExtResource("1_7ktgj")]
+
+[node name="Cube_004" parent="RootNode" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_1f1iy")
+
+[node name="Glowing" type="MeshInstance3D" parent="RootNode" index="1"]
+transform = Transform3D(0.369779, 0, 0, 0, 1, 0, 0, 0, 0.377207, 0, -0.0390365, -0.0876861)
+visible = false
+material_overlay = SubResource("StandardMaterial3D_gfqnn")
+transparency = 0.7
+mesh = SubResource("PlaneMesh_b311p")

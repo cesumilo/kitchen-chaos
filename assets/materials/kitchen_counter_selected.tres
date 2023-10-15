@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://cugjfcx72plkd"]
+
+[ext_resource type="Texture2D" uid="uid://b3ovrenykj331" path="res://assets/imported/textures/Kitchen Counter_MetallicSmoothness.png" id="1_pbhnh"]
+[ext_resource type="Texture2D" uid="uid://cs8ld3kcqm4l6" path="res://assets/imported/textures/Kitchen Counter_Normal.png" id="2_c0k0j"]
+
+[resource]
+transparency = 1
+albedo_color = Color(0.458824, 1, 1, 0.12549)
+metallic = 1.0
+metallic_texture = ExtResource("1_pbhnh")
+emission_energy_multiplier = 0.1
+normal_enabled = true
+normal_texture = ExtResource("2_c0k0j")

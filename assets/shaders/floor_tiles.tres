@@ -1,0 +1,25 @@
+[gd_resource type="StandardMaterial3D" load_steps=5 format=3 uid="uid://btf40q4q0yr23"]
+
+[ext_resource type="Texture2D" uid="uid://iri40ashsec8" path="res://assets/shaders/floor_tiles_albedo.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cawrogxd1a4sv" path="res://assets/shaders/floor_tiles_orm.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://crfuucgvejksw" path="res://assets/shaders/floor_tiles_normal.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dme7vdosyvr1k" path="res://assets/shaders/floor_tiles_heightmap.png" id="4"]
+
+[resource]
+albedo_color = Color(0.85098, 0.85098, 0.85098, 1)
+albedo_texture = ExtResource("1")
+roughness = 0.5
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_light_affect = 0.5
+ao_texture = ExtResource("2")
+heightmap_enabled = true
+heightmap_scale = 0.25
+heightmap_deep_parallax = true
+heightmap_min_layers = 8
+heightmap_max_layers = 32
+heightmap_texture = ExtResource("4")
+uv1_scale = Vector3(2, 2, 2)

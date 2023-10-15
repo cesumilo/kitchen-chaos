@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuvfguf1nk0kd"]
+
+[ext_resource type="PackedScene" uid="uid://usw2uula1f54" path="res://assets/imported/Double doors.fbx" id="1_wsn4d"]
+[ext_resource type="Texture2D" uid="uid://7ne7l7rnr2lm" path="res://assets/imported/textures/Kitchen Counter_AlbedoTransparency.png" id="2_knqfx"]
+[ext_resource type="Texture2D" uid="uid://b3ovrenykj331" path="res://assets/imported/textures/Kitchen Counter_MetallicSmoothness.png" id="3_eo4a7"]
+[ext_resource type="Texture2D" uid="uid://cs8ld3kcqm4l6" path="res://assets/imported/textures/Kitchen Counter_Normal.png" id="4_ai3d6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3dgm"]
+albedo_texture = ExtResource("2_knqfx")
+metallic = 1.0
+metallic_texture = ExtResource("3_eo4a7")
+normal_enabled = true
+normal_texture = ExtResource("4_ai3d6")
+
+[node name="Double doors" instance=ExtResource("1_wsn4d")]
+
+[node name="Counter_002" parent="RootNode" index="0"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0.0292497, 0.370475, 0.0206851)
+material_override = SubResource("StandardMaterial3D_x3dgm")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0p7cc18k1gl5"]
+
+[ext_resource type="PackedScene" uid="uid://crqeuyrsk71o4" path="res://assets/imported/Tomato.fbx" id="1_5if7f"]
+[ext_resource type="Script" path="res://scripts/KitchenObject.cs" id="2_d2yop"]
+[ext_resource type="Texture2D" uid="uid://43l1sb362d6j" path="res://assets/imported/textures/Tomato_AlbedoTransparency.png" id="2_lrvq7"]
+[ext_resource type="Resource" uid="uid://dstqpeb501qhh" path="res://resources/kitchen_objects/tomato.tres" id="3_52svc"]
+[ext_resource type="Texture2D" uid="uid://drmbqu545lpvj" path="res://assets/imported/textures/Tomato_MetallicSmoothness.png" id="3_kot0n"]
+[ext_resource type="Texture2D" uid="uid://hqc3rna6lcn7" path="res://assets/imported/textures/Tomato_Normal.png" id="4_6ekaa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bufay"]
+albedo_texture = ExtResource("2_lrvq7")
+metallic = 1.0
+metallic_texture = ExtResource("3_kot0n")
+roughness = 0.49
+normal_enabled = true
+normal_texture = ExtResource("4_6ekaa")
+
+[node name="Tomato" instance=ExtResource("1_5if7f")]
+script = ExtResource("2_d2yop")
+kitchenObject = ExtResource("3_52svc")
+
+[node name="Tomato" parent="RootNode" index="0"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 2.08165e-12, 2.08165e-12, 2.08165e-12)
+material_override = SubResource("StandardMaterial3D_bufay")
