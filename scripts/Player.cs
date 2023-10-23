@@ -9,6 +9,8 @@ public partial class Player : CharacterBody3D, IKitchenObjectHolder
     [Export] float jumpForce = 10;
     [Export] float interactDistance = 2.5f;
     [Export] float rotationSpeed = 0.4f;
+    [Export] float raycastHeight = 0.7f;
+    [Export] float modelFrontOffsetZ = 0.5f;
     Vector3 direction = Vector3.ModelFront;
     Vector3 targetDirection = Vector3.ModelFront;
     float currentAngle = 0;
@@ -17,6 +19,8 @@ public partial class Player : CharacterBody3D, IKitchenObjectHolder
     Interactable selectedInteractable;
     Marker3D kitchenObjectSpanwer;
     KitchenObject objectHolder;
+
+    MeshInstance3D tempLine;
 
     // Signals
     public partial class OnIteractableSelectedParams : Node
@@ -29,6 +33,9 @@ public partial class Player : CharacterBody3D, IKitchenObjectHolder
     {
         animator = GetNode<AnimationTree>("AnimationPlayer/AnimationTree");
         kitchenObjectSpanwer = GetNode<Marker3D>("KitchenObjectPosition");
+
+        Vector3 start = new(Vector3.ModelFront.X, Vector3.ModelFront.Y + raycastHeight, Vector3.ModelFront.Z);
+        Vector3 end = new(Vector3.ModelFront.X * interactDistance, Vector3.ModelFront.Y + raycastHeight, Vector3.ModelFront.Z * interactDistance);
     }
 
     Vector3 ApplyGravity(Vector3 moveVect, float delta)
@@ -82,6 +89,7 @@ public partial class Player : CharacterBody3D, IKitchenObjectHolder
     void OrientPlayer(Vector3 moveVect)
     {
         Vector3 hDir = new(moveVect.X, 0f, moveVect.Z);
+        // TODO: double check direction system
 
         if (hDir != Vector3.Zero)
         {
@@ -138,14 +146,33 @@ public partial class Player : CharacterBody3D, IKitchenObjectHolder
         selectedInteractable = obj != null ? obj as Interactable : null;
     }
 
+    void DebugLine(Vector3 start, Vector3 end)
+    {
+        if (tempLine != null)
+        {
+            RemoveChild(tempLine);
+            tempLine.Free();
+            tempLine = null;
+        }
+        tempLine = Utils.DrawLine(start, end, Color.Color8(255, 0, 0));
+        AddChild(tempLine);
+    }
+
     void HandleInteractions()
     {
         Vector3 dir = new(direction.X, 1, direction.Z);
         PhysicsDirectSpaceState3D spaceState = GetWorld3D().DirectSpaceState;
-        PhysicsRayQueryParameters3D query = PhysicsRayQueryParameters3D.Create(Position, Position + dir.Normalized() * interactDistance, CollisionMask);
+        Vector3 dirNorm = dir.Normalized();
+        Vector3 startPos = new(Vector3.ModelFront.X, Position.Y + raycastHeight, Vector3.ModelFront.Z - Mathf.Abs(modelFrontOffsetZ));
+        Vector3 endPos = new(Vector3.ModelFront.X, Position.Y + raycastHeight, Vector3.ModelFront.Z + interactDistance);
+        DebugLine(startPos, endPos);
+        // DebugLine(dir.Normalized(), new Vector3(dir.Normalized().X, 1, dir.Normalized().Z + interactDistance));
+        PhysicsRayQueryParameters3D query = PhysicsRayQueryParameters3D.Create(ToGlobal(startPos), ToGlobal(endPos), CollisionMask);
         Dictionary result = spaceState.IntersectRay(query);
+
         if (result.Count > 0)
         {
+            GD.Print("Colliding!");
             Variant collider = result["collider"];
             switch (collider.VariantType)
             {

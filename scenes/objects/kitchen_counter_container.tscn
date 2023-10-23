@@ -17,7 +17,6 @@ normal_texture = ExtResource("4_c2g6d")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kxq1o"]
 resource_name = "Kitchen Counter"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 0.4
 roughness = 0.272166
 
@@ -63,7 +62,6 @@ normal_texture = ExtResource("4_c2g6d")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ui3k2"]
 resource_name = "Kitchen Counter"
 vertex_color_use_as_albedo = true
-albedo_color = Color(1, 1, 1, 1)
 metallic = 0.4
 roughness = 0.272166
 

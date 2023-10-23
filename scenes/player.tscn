@@ -217,7 +217,7 @@ graph_offset = Vector2(127.5, 23.82)
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 collision_mask = 2
 script = ExtResource("1_cwrdi")
-interactDistance = 1.2
+interactDistance = 0.7
 
 [node name="Body" type="Node3D" parent="."]
 
